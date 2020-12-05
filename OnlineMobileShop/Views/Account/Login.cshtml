@@ -1,0 +1,39 @@
+﻿@model OnlineMobileShop.Models.LogIn
+
+@{
+    ViewBag.Title = "LogIn";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Styles/LogIn.css" />
+<body>
+
+    @using (Html.BeginForm("LogIn", "Account", FormMethod.Post))
+    {
+        <h2>Login</h2>
+        <table>
+            <tr>
+                <td>
+                    @Html.Label("Mail-ID")
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.MailID)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Password")
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.Password)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="login" />
+                </td>
+            </tr>
+        </table>
+    }
+</body>
+
+

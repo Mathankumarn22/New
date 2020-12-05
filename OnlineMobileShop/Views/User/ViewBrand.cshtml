@@ -1,0 +1,16 @@
+﻿@model IEnumerable<OnlineMobileShop.Entity.Brand>
+@{
+    ViewBag.Title = "ViewBrand";
+}
+
+@using (Html.BeginForm("ViewMobile", "User", FormMethod.Post))
+{
+
+    foreach (OnlineMobileShop.Entity.Brand product in @Model)
+    {
+            @Html.ActionLink(product.BrandName, "ViewMobile", new { id = product.BrandID }, null)
+
+    }
+}
+
+

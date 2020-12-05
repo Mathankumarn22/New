@@ -1,0 +1,33 @@
+﻿/*.header {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: cadetblue;
+    color: white;
+}
+
+.headerText {
+    text-align: center;
+}
+*/
+.header {
+    font-family: sans-serif;
+    background-color: cadetblue;
+    color: black;
+    font-size: 35px;
+    text-align: center;
+}
+
+.navigation_bar {
+    overflow: hidden;
+    background-color: lightcoral;
+}
+
+    .navigation_bar .Link {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-family: Calibri;
+        font-size: 20px;
+    }
