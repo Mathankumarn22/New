@@ -1,11 +1,52 @@
-﻿table {
+﻿.table {
     margin: 10%;
     padding: 0;
     font-family: sans-serif;
-    
+    font-size: 20px;
+    float: left;
 }
-body {
-    background: url(/Images/fbph.jpeg) no-repeat;
-    background-size:cover;
-    background-position:center;
+
+
+.input {
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 50%;
+}
+
+
+.Login-Input {
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 80%;
+}
+.validation {
+    font-family: Calibri;
+    font-size: 15px;
+    color: red;
+}
+/*
+table {
+    font-family: Calibri;
+    color: black;
+}
+*/
+.button {
+    padding: 10px;
+    font-size: 17px;
+    width: 100%;
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+.text {
+    font-family: Calibri;
+    font-size: 13px;
+    color: black;
 }

@@ -1,45 +1,42 @@
 ﻿<!DOCTYPE html>
 
-<html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" type="text/css" href="~/Styles/Master.css" />
     <title>@ViewBag.Title</title>
 </head>
-
+<body>
     <div class="header">
-        <h1>Online Mobile Shop</h1></div>
-        <div class="navigation_bar">
+        Online Mobile Shop
+        @Html.ActionLink("SignUp", "SignUp", "Account", null, new { @class = "Link" })
 
-            @Html.ActionLink("SignUp", "SignUp", "Account",new { @class = "Link" },null)
+        @if (Request.IsAuthenticated)
+        {
+            @Html.ActionLink("Logout", "LogOff", "Account", null, new { @class = "Link" })
+        }
+        else
+        {
+            @Html.ActionLink("LogIn", "Login", "Account", null, new { @class = "Link" })
+        }
 
-            @if (Request.IsAuthenticated)
-            {
-                @Html.ActionLink("Logout", "LogOff", "Account", new { @class = "Link" },null)
-            }
-            else
-            {
-                @Html.ActionLink("LogIn", "Login", "Account", new { @class = "Link" },null)
-            }
+        @if (HttpContext.Current.User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("View Mobile", "MobileDetails", "Mobile", null, new { @class = "Link" })
+            @Html.ActionLink("AddBrand", "AddBrand", "Mobile", null, new { @class = "Link" })
+            @Html.ActionLink("Add Mobile", "Create", "Mobile", null, new { @class = "Link" })
+            @Html.ActionLink("ViewBrand", "ViewBrand", "Mobile", null, new { @class = "Link" })
 
-            @if (HttpContext.Current.User.IsInRole("Admin"))
-            {
-                @Html.ActionLink("View Mobile", "MobileDetails", "Mobile", new { @class = "Link" },null)
-                @Html.ActionLink("AddBrand", "AddBrand", "Mobile", new { @class = "Link" },null)
-                @Html.ActionLink("Add Mobile", "Create", "Mobile", new { @class = "Link" }, null)
-                @Html.ActionLink("ViewBrand", "ViewBrand", "Mobile", new { @class = "Link" }, null)
+        }
+        @if (HttpContext.Current.User.IsInRole("User"))
+        {
+            @Html.ActionLink("Index", "Index", "Account", null, new { @class = "Link" })
+            @Html.ActionLink("ViewBrand", "ViewBrand", "User", null, new { @class = "Link" })
+        }
 
-            }
-            @if (HttpContext.Current.User.IsInRole("User"))
-            {
-                @Html.ActionLink("Index", "Account", new { @class = "Link" }, null)
-                @Html.ActionLink("ViewBrand", "ViewBrand", "User", new { @class = "Link" }, null)
-            }
-            
-        </div>
+    </div>
+    <hr />
 
     <div>
         @RenderBody()
     </div>
 </body>
-

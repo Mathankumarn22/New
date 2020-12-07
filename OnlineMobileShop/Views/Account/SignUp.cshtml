@@ -3,25 +3,26 @@
 @{
     ViewBag.Title = "SignUp";
 }
-<center>
-
-    <h2>SignUp</h2>
-    @if (ViewBag.Message != null)
-    {
-        Response.Write(ViewBag.Message);
-    }
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Styles/LogIn.css" />
+</head>
+<body>
+    <h3 style="font-family:sans-serif;padding-left:10%">Sign Up</h3>
     @using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
     {
-
-        <table align="center" cellspacing="10" cellpadding="10" style="font-family:Calibri;background-color:dimgrey;border:groove;color:white">
-
+        <table align="left" cellspacing="10" cellpadding="10">
+            @if (ViewBag.Message != null)
+            {
+                Response.Write(ViewBag.Message);
+            }
+            
             <tr>
                 <td>
                     @Html.LabelFor(model => model.Name)
                 </td>
                 <td>
-                    @Html.TextBoxFor(Model => Model.Name, htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
-                    @Html.ValidationMessageFor(Model => Model.Name)
+                    @Html.TextBoxFor(Model => Model.Name, htmlAttributes: new { @class = "input", @maxlength = "30", @placeholder = "e.g. mathan" })
+                    @Html.ValidationMessageFor(Model => Model.Name, null, new { @class = "validation" })
                 </td>
             </tr>
             <tr>
@@ -29,8 +30,8 @@
                     @Html.LabelFor(Model => Model.PhoneNumber)
                 </td>
                 <td>
-                    @Html.TextBoxFor(Model => Model.PhoneNumber, htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
-                    @Html.ValidationMessageFor(Model => Model.PhoneNumber)
+                    @Html.TextBoxFor(Model => Model.PhoneNumber, htmlAttributes: new { @class = "input", @maxlength = "30", @placeholder = "e.g. 9876543210" })
+                    @Html.ValidationMessageFor(Model => Model.PhoneNumber, null, new { @class = "validation" })
                 </td>
             </tr>
             <tr>
@@ -39,8 +40,8 @@
                     @Html.LabelFor(Model => Model.Gender)
                 </td>
                 <td>
-                    @Html.EnumDropDownListFor(Model => Model.Gender, "--Select gender--", htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
-                    @Html.ValidationMessageFor(Model => Model.Gender)
+                    @Html.EnumDropDownListFor(Model => Model.Gender, "--Select gender--", htmlAttributes: new { @class = "input", @maxlength = "30" })
+                    @Html.ValidationMessageFor(Model => Model.Gender, null, new { @class = "validation" })
                 </td>
             </tr>
             <tr>
@@ -48,8 +49,8 @@
                     @Html.LabelFor(Model => Model.MailID)
                 </td>
                 <td>
-                    @Html.TextBoxFor(Model => Model.MailID, htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
-                    @Html.ValidationMessageFor(Model => Model.MailID)
+                    @Html.TextBoxFor(Model => Model.MailID, htmlAttributes: new { @class = "input", @maxlength = "30", @placeholder = "e.g. example@mail.com" })
+                    @Html.ValidationMessageFor(Model => Model.MailID, null, new { @class = "validation" })
                 </td>
             </tr>
             <tr>
@@ -57,8 +58,9 @@
                     @Html.LabelFor(Model => Model.Password)
                 </td>
                 <td>
-                    @Html.PasswordFor(Model => Model.Password, htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
-                    @Html.ValidationMessageFor(Model => Model.Password)
+                    @Html.PasswordFor(Model => Model.Password, htmlAttributes: new { @class = "input", @maxlength = "30", @placeholder = "Enter your password" })
+                    <div class="text">*Password should atleast contain 8 character like uppercase,lowecase,number,symbol</div>
+                    @Html.ValidationMessageFor(Model => Model.Password, null, new { @class = "validation" })
                 </td>
             </tr>
             <tr>
@@ -66,18 +68,16 @@
                     @Html.LabelFor(Model => Model.ConfirmPassword)
                 </td>
                 <td>
-                    @Html.PasswordFor(Model => Model.ConfirmPassword, htmlAttributes: new { style = "border-radius:5px;padding:5px", @maxlength = "30" })
-                    @Html.ValidationMessageFor(Model => Model.ConfirmPassword)
+                    @Html.PasswordFor(Model => Model.ConfirmPassword, htmlAttributes: new { @class = "input", @maxlength = "30", @placeholder = "Password should be match" })
+                    @Html.ValidationMessageFor(Model => Model.ConfirmPassword, null, new { @class = "validation" })
                 </td>
             </tr>
             <tr>
                 <td>
                     @Html.AntiForgeryToken()
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Register" class="button" />
                 </td>
             </tr>
         </table>
     }
-
-</center>
-
+</body>

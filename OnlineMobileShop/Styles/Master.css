@@ -9,21 +9,28 @@
     text-align: center;
 }
 */
+body {
+    background: url(/Images/david-grandmougin-OvR4yVnLSCY-unsplash.jpg) no-repeat;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width:100%;
+    background-size:cover;
+    overflow:hidden;
+}
+
 .header {
     font-family: sans-serif;
-    background-color: cadetblue;
+    background-color: transparent;
+    padding: 10px;
+    padding-bottom: 5px;
+    font-size: 30px;
     color: black;
-    font-size: 35px;
-    text-align: center;
-}
-
-.navigation_bar {
+    font-weight: 500;
     overflow: hidden;
-    background-color: lightcoral;
 }
 
-    .navigation_bar .Link {
-        float: left;
+    .header .Link {
+        float: right;
         color: black;
         text-align: center;
         padding: 14px 16px;
@@ -31,3 +38,7 @@
         font-family: Calibri;
         font-size: 20px;
     }
+
+        .header .Link:hover {
+            background-color: powderblue;
+        }

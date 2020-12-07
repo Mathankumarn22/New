@@ -125,6 +125,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\david-grandmougin-OvR4yVnLSCY-unsplash.jpg" />
     <Content Include="Images\fbph.jpeg" />
     <Content Include="Images\hello.jpeg" />
     <Content Include="Images\Nokia.jpg" />
@@ -138,7 +139,6 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Styles\LogIn.css" />
     <Content Include="Styles\Master.css" />
-    <Content Include="Styles\StyleSheet.css" />
     <Content Include="Web.config" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />

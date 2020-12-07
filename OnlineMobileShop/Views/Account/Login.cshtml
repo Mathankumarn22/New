@@ -1,4 +1,5 @@
-﻿@model OnlineMobileShop.Models.LogIn
+﻿
+@model OnlineMobileShop.Models.LogIn
 
 @{
     ViewBag.Title = "LogIn";
@@ -6,17 +7,18 @@
 
 <link rel="stylesheet" type="text/css" href="~/Styles/LogIn.css" />
 <body>
+    <h3 style="font-family:sans-serif;padding-left:5%">Log In</h3>
 
     @using (Html.BeginForm("LogIn", "Account", FormMethod.Post))
     {
-        <h2>Login</h2>
-        <table>
+        <table align="left" cellspacing="10" cellpadding="10">
+
             <tr>
                 <td>
                     @Html.Label("Mail-ID")
                 </td>
                 <td>
-                    @Html.TextBoxFor(Model => Model.MailID)
+                    @Html.TextBoxFor(Model => Model.MailID, htmlAttributes: new { @class = "Login-Input", @maxlength = "30", @placeholder = "Enter your mail id" })
                 </td>
             </tr>
             <tr>
@@ -24,16 +26,14 @@
                     @Html.Label("Password")
                 </td>
                 <td>
-                    @Html.TextBoxFor(Model => Model.Password)
+                    @Html.TextBoxFor(Model => Model.Password, htmlAttributes: new { @class = "Login-Input", @maxlength = "30", @placeholder = "Enter your password" })
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="submit" value="login" />
+                    <input type="submit" value="Login" class="button" />
                 </td>
             </tr>
         </table>
     }
 </body>
-
-
